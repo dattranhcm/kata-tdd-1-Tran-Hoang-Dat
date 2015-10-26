@@ -31,7 +31,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void whenHaveOneNumber() {
-		assertEquals(1,cal.add("2"));
+		assertEquals(2,cal.add("2"));
 	}
 	
 	@Test()
