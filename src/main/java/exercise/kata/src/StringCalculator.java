@@ -20,8 +20,11 @@ public class StringCalculator {
 	}
 
 	private void buildRegex(String delimiter) {
-		this.regex = new StringBuilder(regex).insert(regex.length() - 1,
-				delimiter).toString();
+		if(!regex.contains(delimiter)){
+			this.regex = new StringBuilder(regex).insert(regex.length() - 1,
+					delimiter).toString();
+		}
+		
 	}
 
 	public int add(String numbers) {
