@@ -29,9 +29,9 @@ public class StringCalculatorTest {
 		assertEquals(0,cal.add(""));
 	}
 	
-	
+	@Test
 	public void whenHaveOneNumber() {
-		assertEquals(2,cal.add("2"));
+		assertEquals(1,cal.add("2"));
 	}
 	
 	@Test()
@@ -39,5 +39,22 @@ public class StringCalculatorTest {
 		assertEquals(5,cal.add("2,3"));
 	}
 
+	@Test()
+	public void whenNumberOfNumberIsUnknow() {
+		assertEquals(2+3+3+5+6+7+2,cal.add("2,3,3,5,6,7,2"));
+	}
+	
+	@Test()
+	public void whenNewLineInsteadOfCommas() {
+		assertEquals(9,cal.add("1\n2,3\n3"));
+	}
+	
+	@Test()
+	public void whenChangeOtherDelimiter() {
+		assertEquals(7,cal.add("//;\n2;5"));
+	}
+	
+	
+	
 	
 }
