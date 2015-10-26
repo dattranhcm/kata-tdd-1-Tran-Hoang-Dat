@@ -34,14 +34,10 @@ public class StringCalculatorTest {
 		assertEquals(2,cal.add("2"));
 	}
 	
-	@Test(expected = RuntimeException.class)
-	public void whenNumberMore2Numbers() {
-		assertEquals(9,cal.add("2,3,4"));
+	@Test()
+	public void whenNumber2Numbers() {
+		assertEquals(5,cal.add("2,3"));
 	}
 
-	@Test(expected = RuntimeException.class)
-	public void whenNumberIsCorrectFormat() {
-		assertEquals(0,cal.add("2,cal"));
-	}
 	
 }

@@ -12,22 +12,13 @@ public class StringCalculator {
 
 	public int add(String numbers) {
 		int result = 0;
-		try {
 			String[] numArr = numbers.split(",");
-			if (numArr.length > 2) {
-				throw new RuntimeException("More than 2 numbers...");
-			} else {
-				for (String number : numArr) {
+			for (String number : numArr) {
 					if (!number.isEmpty()) {
 						int n = Integer.parseInt(number);
 						result = result + n;
 					}
 				}
-			}
-			
-		} catch (NumberFormatException ex) {
-			throw new RuntimeException(ex);
-		}
 		return result;
 	}
 }
