@@ -54,6 +54,12 @@ public class StringCalculatorTest {
 		assertEquals(7,cal.add("//;\n2;5"));
 	}
 	
+	@Test(expected = RuntimeException.class)
+	public void whenNumberContainNegative() {
+		cal.add("9,-2,-8");
+	}
+	
+	 
 	
 	
 	
