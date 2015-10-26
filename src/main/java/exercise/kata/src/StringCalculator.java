@@ -1,5 +1,8 @@
 package exercise.kata.src;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 	private static StringCalculator instance = new StringCalculator();
 
@@ -27,13 +30,19 @@ public class StringCalculator {
 					delimiterIndex + 1));
 			numbers = new StringBuilder(numbers).replace(0, delimiterIndex, "").toString();
 		}
-
+		List<Integer> negative = new ArrayList<Integer>();
 		String[] numArr = numbers.split(regex);
 		for (String number : numArr) {
 			if (!number.isEmpty()) {
 				int n = Integer.parseInt(number);
+				if(n<0){
+					negative.add(n);
+				}
 				result = result + n;
 			}
+		}
+		if(negative.size()>0){
+			throw new RuntimeException("Negatives not allowed: " + negative.toString());
 		}
 		return result;
 	}

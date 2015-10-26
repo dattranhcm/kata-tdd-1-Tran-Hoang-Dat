@@ -1,5 +1,6 @@
 package exercise.kata.src;
 
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -54,11 +55,21 @@ public class StringCalculatorTest {
 		assertEquals(7,cal.add("//;\n2;5"));
 	}
 	
-	@Test(expected = RuntimeException.class)
+	@Test
 	public void whenNumberContainNegative() {
-		cal.add("9,-2,-8");
+		String exMessage="";
+	    try {
+	        cal.add("-3,6,4,-2");
+	    } catch (RuntimeException e) {
+	    	exMessage = e.getMessage();
+	    }
+	    Assert.assertEquals("Negatives not allowed: [-3, -2]", exMessage);
 	}
 	
+	@Test()
+	public void whenIgnoreBiggerThan1000() {
+		assertEquals(9,cal.add("//;1;3,1000,1001\n5"));
+	}
 	 
 	
 	
