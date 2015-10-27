@@ -1,6 +1,5 @@
 package exercise.kata.src;
 
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -63,7 +62,7 @@ public class StringCalculatorTest {
 	    } catch (RuntimeException e) {
 	    	exMessage = e.getMessage();
 	    }
-	    Assert.assertEquals("Negatives not allowed: [-3, -2]", exMessage);
+	    assertEquals("Negatives not allowed: [-3, -2]", exMessage);
 	}
 	
 	@Test()
